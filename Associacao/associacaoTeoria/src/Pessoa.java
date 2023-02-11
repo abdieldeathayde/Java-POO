@@ -1,0 +1,3 @@
+class Pessoa{
+    Endereco endereco;
+}

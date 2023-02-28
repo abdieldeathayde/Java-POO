@@ -12,7 +12,7 @@ import java.util.LinkedHashSet;
 import java.util.Objects;
 import java.util.Set;
 
-import Colletions.Serie;
+// import Colletions.Serie;
 
 public class ExemploOrdenacaoSet {
     public static void main(String[] args) {

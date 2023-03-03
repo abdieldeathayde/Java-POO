@@ -1,14 +1,16 @@
 package Colletions;
 
-class Serie {
+import java.util.Comparator;
+
+class Serie implements Comparable<Serie> {
     private String nome;
     private String genero;
-    private Integer tempoEisodio;
+    private Integer tempoEpisodio;
 
-    public Serie(String nome, String genero, Integer tempoEisodio) {
+    public Serie(String nome, String genero, Integer tempoEpisodio) {
         this.nome = nome;
         this.genero = genero;
-        this.tempoEisodio = tempoEisodio;
+        this.tempoEpisodio = tempoEpisodio;
     }
 
     public String getNome() {
@@ -19,8 +21,8 @@ class Serie {
         return genero;
     }
 
-    public Integer getTempoEisodio() {
-        return tempoEisodio;
+    public Integer getTempoEpisodio() {
+        return tempoEpisodio;
     }
 
     @Override
@@ -28,7 +30,7 @@ class Serie {
         return "Serie{" +
                 "[nome=" + nome + '\'' +
                 ", genero=" + genero + '\'' +
-                ", tempoEisodio=" + tempoEisodio + '}' + "]";
+                ", tempoEpisodio=" + tempoEpisodio + '}' + "]";
     }
 
     @Override
@@ -37,7 +39,7 @@ class Serie {
         int result = 1;
         result = prime * result + ((nome == null) ? 0 : nome.hashCode());
         result = prime * result + ((genero == null) ? 0 : genero.hashCode());
-        result = prime * result + ((tempoEisodio == null) ? 0 : tempoEisodio.hashCode());
+        result = prime * result + ((tempoEpisodio == null) ? 0 : tempoEpisodio.hashCode());
         return result;
     }
 
@@ -60,14 +62,37 @@ class Serie {
                 return false;
         } else if (!genero.equals(other.genero))
             return false;
-        if (tempoEisodio == null) {
-            if (other.tempoEisodio != null)
+        if (tempoEpisodio == null) {
+            if (other.tempoEpisodio != null)
                 return false;
-        } else if (!tempoEisodio.equals(other.tempoEisodio))
+        } else if (!tempoEpisodio.equals(other.tempoEpisodio))
             return false;
         return true;
     }
 
+    @Override
+    public int compareTo(Serie serie) {
+        int tempoEpisodio = Integer.compare(this.getTempoEpisodio(), serie.getTempoEpisodio());
+        if (tempoEpisodio != 0) return tempoEpisodio;
+
+        return this.getGenero().compareTo(serie.getGenero());
+    }
+    
     
 
+}
+class ComparatorNomeGeneroTempoEpisodio implements Comparator<Serie> {
+    @Override
+    public int compare(Serie s1, Serie s2) {
+        
+        int nome = s1.getNome().compareTo(s2.getNome());
+        if (nome != 0) return nome;
+
+
+        int genero =  s1.getGenero().compareTo(s2.getGenero());
+        if (genero != 0) return genero;
+        
+
+        return Integer.compare(s1.getTempoEpisodio(), s2.getTempoEpisodio());
+    }
 }

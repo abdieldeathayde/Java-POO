@@ -1,4 +1,4 @@
-package Colletions;
+package Colletions.Set;
 
 import java.util.HashSet;
 import java.util.LinkedHashSet;
@@ -39,12 +39,21 @@ public class ExemploOrdenacaoSet {
         Set<Serie> minhasSeries2 = new TreeSet<>(minhasSeries1);  
         System.out.println(minhasSeries2);
 
-        System.out.println("--\tOrdem Nome/Gênero/TempoEpisodio");
-        // Object NomeGeneroTempoEpisodio;
+        System.out.println("--\tOrdem Nome/Gênero/TempoEpisodio\t--");
         Set<Serie> minhasSeries3 = new TreeSet<>(new ComparatorNomeGeneroTempoEpisodio());
         minhasSeries3.addAll(minhasSeries);
         for (Serie serie: minhasSeries3) System.out.println(serie.getNome() + " - " + serie.getGenero() + " - " + serie.getTempoEpisodio());
-        // System.out.println(NomeGeneroTempoEpisodio);        
+        
+        System.out.println("--\tOrdem gênero\t--");
+        Set<Serie> minhasSeries4 = new TreeSet<>(new ComparatorGenero());
+        minhasSeries4.addAll(minhasSeries);
+        for (Serie serie: minhasSeries4) System.out.println(serie.getGenero());
+        
+        System.out.println("--\tOrdem tempo Episódio\t--");
+        Set<Serie> minhasSeries5 = new TreeSet<>(new ComparatorTempoEpisodio());
+        minhasSeries5.addAll(minhasSeries);
+        for (Serie serie: minhasSeries5)  System.out.println(serie.getTempoEpisodio());
+        
     }
 
 }

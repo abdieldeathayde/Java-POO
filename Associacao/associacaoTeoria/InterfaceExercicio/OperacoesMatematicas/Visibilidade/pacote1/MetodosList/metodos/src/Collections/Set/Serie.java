@@ -1,4 +1,4 @@
-package Colletions.Set;
+package Collections.Set;
 
 class Serie implements Comparable<Serie> {
     private String nome;

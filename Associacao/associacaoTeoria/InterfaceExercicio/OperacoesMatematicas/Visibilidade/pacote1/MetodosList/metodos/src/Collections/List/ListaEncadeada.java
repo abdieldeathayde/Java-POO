@@ -1,4 +1,4 @@
-package Colletions.List;
+package Collections.List;
 public class ListaEncadeada<T> {
     
     

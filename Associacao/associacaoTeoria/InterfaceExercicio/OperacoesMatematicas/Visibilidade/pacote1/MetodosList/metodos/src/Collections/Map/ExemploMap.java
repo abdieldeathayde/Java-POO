@@ -1,4 +1,4 @@
-package Colletions.Map;
+package Collections.Map;
 
 import java.util.Collection;
 import java.util.Collections;

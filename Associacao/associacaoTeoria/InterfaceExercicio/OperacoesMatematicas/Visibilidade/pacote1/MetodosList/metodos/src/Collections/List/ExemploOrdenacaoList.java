@@ -1,4 +1,4 @@
-package Colletions.List;
+package Collections.List;
 
 /*Dadas as seguintes informações sobre meus gatos, crie uma lista
 e ordene esta lista exibindo:
@@ -13,9 +13,9 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 
-import Colletions.List.Gato.ComparatorCor;
-import Colletions.List.Gato.ComparatorIdade;
-import Colletions.List.Gato.ComparatorNomeCorIdade;
+import Collections.List.Gato.ComparatorCor;
+import Collections.List.Gato.ComparatorIdade;
+import Collections.List.Gato.ComparatorNomeCorIdade;
 
 public class ExemploOrdenacaoList {
     public static void main(String[] args) {

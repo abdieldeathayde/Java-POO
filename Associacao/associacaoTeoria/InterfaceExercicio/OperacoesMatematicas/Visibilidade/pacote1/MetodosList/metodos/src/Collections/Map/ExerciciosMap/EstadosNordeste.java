@@ -4,10 +4,19 @@ package Collections.Map.ExerciciosMap;
 
 
 public class EstadosNordeste {
-    String nome;
-    Integer populacao;
+    public String nome;
+    public Integer populacao;
 
     
+
+    
+
+    public EstadosNordeste(String nome, Integer populacao) {
+        this.nome = nome;
+        this.populacao = populacao;
+    }
+
+
 
     public EstadosNordeste(String string, int i) {
     }
